@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2012 Cody Sechelski 
+ * http://www.codebycody.com/2012/02/sfdc-randomizer.html
+ * 
+ **/
+
 global class Randomizer {
 
      //returns a random Integer
