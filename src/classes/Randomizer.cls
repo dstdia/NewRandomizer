@@ -1,13 +1,13 @@
-public class Randomizer {
+global class Randomizer {
 
      //returns a random Integer
-     public static Integer getRandomNumber(Integer size){
+     global static Integer getRandomNumber(Integer size){
           Double d = math.random() * size;
           return d.intValue();
      }
 
      //returns either true or false randomly
-     public static Boolean getRandomBoolean(){
+     global static Boolean getRandomBoolean(){
           if(math.mod(getRandomNumber(10),2) == 0){
                return true;
           }
@@ -17,7 +17,7 @@ public class Randomizer {
      }
 
      //Get's a random value from a list of strings
-     public static String getRandomString(List<String> strings){
+     global static String getRandomString(List<String> strings){
           List<Double> ranks = new List<Double>();
           Map<Double,String> rankMap = new Map<Double,String>();
 
@@ -42,7 +42,7 @@ public class Randomizer {
      }
 
      //Returns a random picklist value 
-     public static string getRandomPickListValue(Sobject s_object, String field_name, Boolean allow_blank){
+     global static string getRandomPickListValue(Sobject s_object, String field_name, Boolean allow_blank){
           List<String> Strings = new List<String>();
           if(allow_blank){
                String b = '';
@@ -60,7 +60,7 @@ public class Randomizer {
 
      //returns a map of all picklists and multiselect picklists for a givien object
      //the keyset is the field name using proper case
-     public static Map<String,List<String>> getPicVals(sObject s_object){
+     global static Map<String,List<String>> getPicVals(sObject s_object){
           Map<String,List<String>> valueMap = new Map<String,List<String>>();
           Schema.sObjectType sobject_type = s_object.getSObjectType();
           Schema.DescribeSObjectResult r = sobject_type.getDescribe();
@@ -81,7 +81,7 @@ public class Randomizer {
      }
 
      //Returns Lorem Ipsum placeholder text.
-     public static String getPlaceholderText(Integer length){
+     global static String getPlaceholderText(Integer length){
           String firstSentence = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ';
           List<String> sentenceList = new List<String>();
           sentenceList.add('Vivamus nec lacus eget massa cursus pulvinar. ');
@@ -110,21 +110,5 @@ public class Randomizer {
           s = s.substring(0,s.length()-1).trim();
           s += '.';
           return s;
-     }
-
-     static testMethod void testRandomizer() {
-          test.startTest();
-          Integer testInt = getRandomNumber(10);
-          Boolean testBool = getRandomBoolean();
-          List<String> testStringList = new List<String>();
-          testStringList.add('one');
-          testStringList.add('two');
-          testStringList.add('three');
-          String testString = getRandomString(testStringList);
-          String testString2 = getRandomPickListValue(new Account(), 'Industry', true);
-          String testString3 = getRandomPickListValue(new Account(), 'Industry', false);
-          Map<String,List<String>> testMap = getPicVals(new Account());
-          test.stopTest();
-          String testString4 = getPlaceholderText(300);
      }
 }

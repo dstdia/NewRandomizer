@@ -1,0 +1,17 @@
+
+config/+
+*.sublime-workspace
+config/.*
+src/components/*
+src/pages/*
+src/staticresources/*
+src/package.xml
+src/classes/Site*
+src/classes/OAuth*
+src/classes/Canto*
+src/classes/Cumulus*
+src/classes/Call*
+src/classes/Forgot*
+src/classes/Change*
+src/classes/My*
+src/classes/Nzi*
