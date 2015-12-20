@@ -7,7 +7,7 @@ Cody's documentation was as follows, to use it for the time being.
 
 http://www.codebycody.com/2012/02/sfdc-randomizer.html
 
-SFDC Randomizer
+##SFDC Randomizer
 
 Let’s get random here for a moment.
 Have you ever needed a random number in Salesforce.com? Or maybe you need to pick a random value from a list or have the system return a random Boolean value. Here is the solution, the SFDC Randomizer class. Install this randomizer class in your org and call the available methods from any other APEX class or trigger.
@@ -15,9 +15,8 @@ Have you ever needed a random number in Salesforce.com? Or maybe you need to pic
 This class is all built off of the getRandomNumber method which can be called to generate a random integer, but also provides a “random seed” for the other methods in the class. So if you choose to only copy individual methods to an existing class, be sure to understand which other methods will be called and copy those as well.
 
 The table below shows the available methods, their arguments and what they return: 
-Name	Arguments	Return Type	Description
-getRandomNumber
-Integer size		The size integer represents the maximum value that can be returned.
+|Name|Arguments|Return Type|Description
+getRandomNumber|Integer size|Integer|The size integer represents the maximum value that can be returned.
 For example:
 getRandomNumber(10) could return any number between 0 and 9. getRandomNumber(1000) could return any umber between 0 and 999.
 getRandomBoolean
@@ -37,7 +36,7 @@ Integer length	String	Returns placeholder (Lorem Ipsum) text of a certain length
 More about Lorem Ipsum
 NOTE: in an effort to maintain proper sentence structure without adding too much logic, it is possible for the returned string to be up to two characters shorter than the length argument, but never more.
 
-Usage and Examples
+##Usage and Examples
 
 Example 1 - Generating a random number
 Once you have the randomizer class in your org, you can generate a random number using the following code.
